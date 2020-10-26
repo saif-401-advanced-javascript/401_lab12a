@@ -75,7 +75,7 @@ All the websites that require registrations, uses the authentications from diffe
 
 ### Code Demos
 
-- [live/running application](http://xyz.com)
+- [live/running application](https://lab12a.herokuapp.com)
 - [code repository](https://github.com/saif-401-advanced-javascript/401_lab12a)
 
 ### Operating Instructions
@@ -84,7 +84,7 @@ All the websites that require registrations, uses the authentications from diffe
 - install the dependencies provided above
 
 * `npm start`
-* Go To browser to this link http://localhost/3000
+* Use the live/running application link provided prevously
 * click on Login
 * Register in you Google account.
 * You should receive a JSON representation of you generated token
