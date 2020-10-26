@@ -10,16 +10,16 @@ const users = require('./users.js');
 
 const tokenServerUrl = process.env.TOKEN_SERVER;
 const remoteAPI = process.env.REMOTE_API;
-const CLIENT_ID = process.env.CLIENT_ID;
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const API_SERVER = process.env.API_SERVER;
+const CLIENT_ID = process.env.ClientID;
+const CLIENT_SECRET = process.env.ClientSecret;
+const API_SERVER = process.env.APISERVER;
 
 module.exports = async function authorize(req, res, next) {
-  console.log('Request in middleware', req);
-
+  console.log('this is the reequest quesy', req.query);
   try {
+    console.log('inside try');
     let code = req.query.code;
-    console.log('(1) CODE:', code);
+    console.log('(10000000000000) CODE:', code);
 
     let remoteToken = await exchangeCodeForToken(code);
     console.log('(2) ACCESS TOKEN:', remoteToken);
@@ -48,6 +48,7 @@ async function exchangeCodeForToken(code) {
   });
 
   let access_token = tokenResponse.body.access_token;
+  // console.log('this is the token ', access_token);
 
   return access_token;
 }
@@ -56,7 +57,10 @@ async function getRemoteUserInfo(token) {
   let userResponse = await superagent
     .get(remoteAPI)
     .set('user-agent', 'express-app')
-    .set('Authorization', `token ${token}`);
+    .query({
+      alt: 'json',
+      access_token: token,
+    });
 
   let user = userResponse.body;
 
@@ -65,7 +69,7 @@ async function getRemoteUserInfo(token) {
 
 async function getUser(remoteUser) {
   let userRecord = {
-    username: remoteUser.login,
+    username: remoteUser.name,
     password: 'oauthpassword',
   };
 

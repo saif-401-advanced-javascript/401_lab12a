@@ -1,40 +1,18 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta
+      name="google-signin-client_id"
+      content="20130920345-i89aphai3edr50pgurjjvqoake77mh1p.apps.googleusercontent.com"
+    />
+    <title>Auth Test</title>
+  </head>
 
-<head>
-  <title>Auth Test</title>
-</head>
-
-<body>
-  <main>
-
-    <a id="oauth" href="#">Login</a>
-
-  </main>
-
-  <script>
-
-    let URL = "https://github.com/login/oauth/authorize";
-
-    let options = {
-      client_id: '35e8de24061ca19f4296',
-      redirect_uri: 'http://localhost:3000/oauth',
-      scope: 'read:user',
-      state: 'asldfjdfs'
-    }
-
-    let QueryString = Object.keys(options).map((key) => {
-      return `${key}=` + encodeURIComponent(options[key]);
-    }).join("&");
-
-    let authURL = `${URL}?${QueryString}`;
-
-    let link = document.getElementById('oauth');
-    link.setAttribute('href', authURL);
-
-  </script>
-
-
-</body>
-
+  <body>
+    <main>
+      <a id="oauth" href="#">Login</a>
+    </main>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="./index_static.js"></script>
+  </body>
 </html>
