@@ -1,49 +1,90 @@
 # OAuth Comparative Analysis
 
-## OAuth Provider Name 
+## OAuth Provider Name
+
+### Google
 
 ### Research Conducted By: Student Names
 
+- Ahmad
+- Bayan
+- Malek
+- Saif
+
 ### Overall Score and Comments
+
 #### Score (Out of 10): 7
+
 #### General Comments
-Describe the stack (front-end only? full stack?), database, efficiency, etc. Describe the general usability and learnability
+
+Authenticate users using OAuth
+Following authentication manage the user account
+Add new accounts or reference existing ones following authentication
+Provide an access token
+As with Basic Authentication, the return value for a valid login is a JWT Token
 
 #### Pros
-* Item 1
-* Item 2
+
+- More Secure
+- Practicing more on the authentication idea.
+- Learn searching skills on google for specific things
 
 #### Cons
-* Item 1
-* Item 2
+
+- Week documentation from Google
 
 ### Ratings and Reviews
+
 #### Documentation
-Thoughts go here
+
+- sing in the website using Google account, Google authentication.
+
+- the `a` tag will transfer the user to Google account registeration
+
+- Called token from Google auth to register the user.
+
+- insert the token that was provided from Google in the request object
+
+- response with that token after the redirection
 
 #### Systems Requirements
-Above and beyond 'node' and 'linux', what dependencies or core requirements exist for this framework?  Can it play at AWS/Heroku?  Does it require a certain database?
+
+```cmd
+npm i base-64
+npm i bcrypt
+npm i cors
+npm i debug
+npm i dotenv
+npm i express
+npm i jsonwebtoken
+npm i morgan
+npm i superagent
+```
 
 #### Ramp-Up Projections
-How long would/should it take a team of mid-junior developers to become productive?
+
+It depends on the documentation or the job it self, but in general they should spend 1-2 hours to figure out the idea of the task then start coding
 
 #### Community Support and Adoption levels
-How popular is this framework? What big companies are running on it? How is it "seen" in the general JS community?  Is there an active community of developers supporting and growing it?
 
+All the websites that require registrations, uses the authentications from different websites, such as Google,Facebook, and LinkedIn
 
 ### Links and Resources
-* [framework](http://xyz.com)
-* [docs](http://xyz.com)
-* [examples/tutorials](http://xyz.com)
+
+- [docs](https://developers.google.com/identity/sign-in/web/sign-in)
 
 ### Code Demos
-* [live/running application](http://xyz.com)
-* [code repository](http://xyz.com)
+
+- [live/running application](http://xyz.com)
+- [code repository](https://github.com/saif-401-advanced-javascript/401_lab12a)
 
 ### Operating Instructions
-If someone were to download your repo (above), what steps do they need to take to run the application
+
+- First you have to Install nodemon globally to start the server
+- install the dependencies provided above
+
 * `npm start`
-* Endpoint: `/foo/bar/`
-  * Returns a JSON object with abc in it.
-* Endpoint: `/bing/zing/`
-  * Returns a JSON object with xyz in it.
+* Go To browser to this link http://localhost/3000
+* click on Login
+* Register in you Google account.
+* You should receive a JSON representation of you generated token

@@ -15,7 +15,6 @@ const CLIENT_SECRET = process.env.ClientSecret;
 const API_SERVER = process.env.APISERVER;
 
 module.exports = async function authorize(req, res, next) {
-  console.log('this is the reequest quesy', req.query);
   try {
     console.log('inside try');
     let code = req.query.code;

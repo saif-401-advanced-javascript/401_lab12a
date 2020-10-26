@@ -4,7 +4,7 @@ let URL = 'https://accounts.google.com/o/oauth2/v2/auth';
 let options = {
   client_id:
     '20130920345-i89aphai3edr50pgurjjvqoake77mh1p.apps.googleusercontent.com',
-  redirect_uri: 'http://localhost:3000/oauth',
+  redirect_uri: 'https://lab12a.herokuapp.com/oauth',
   response_type: 'code',
   scope: 'profile email',
   fetch_basic_profile: true,
